@@ -5,7 +5,7 @@
 // So this is the first bit of code to be executed.
 .section ".text.boot"
 
-.global start
+.globl _start
 
 // This code is executed on all cores (4 of them on the
 // rasberry pi). We only want one to execute.

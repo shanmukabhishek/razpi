@@ -12,7 +12,7 @@
 
 #ifndef __ASSEMBLER __
 
-void memzero(const unsigned long src, const unsigned long n);
+extern void memzero(const unsigned long src, const unsigned long n);
 
 #endif
 

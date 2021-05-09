@@ -1,0 +1,5 @@
+bin/
+
+# Following are just random files I don't want to add.
+bib
+*.out

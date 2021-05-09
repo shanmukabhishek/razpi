@@ -11,14 +11,12 @@ all: kernel.img
 clean:
 	- rm -rf $(DIR_BUILD) *.img	
 
-build_src:
-	$(ARMGNU)-gcc $(CFLG) -MMD 
 $(DIR_BUILD)/%_c.o: $(DIR_SRC)/%.c
 	mkdir -p $(@D)
-	$(ARMGNU)-gcc $(CFLG) -MMD $< -o $@
+	$(ARMGNU)-gcc $(CFLG) -MMD -c $< -o $@
 
 $(DIR_BUILD)/%_s: $(SRC_DIR)/%.s
-	$(ARMGNU)-gcc $(AFLG) -MMD $< -o $@
+	$(ARMGNU)-gcc $(AFLG) -MMD -c $< -o $@
 
 C_FILES= $(wildcard $(DIR_SRC)/*.c)
 ASM_FILES= $(wildcard $(DIR_SRC)/*.s)
