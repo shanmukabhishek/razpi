@@ -31,4 +31,4 @@ kernel.img: $(DIR_SRC)/linker.ld $(OBJ_FILES)
 	$(ARMGNU)-objcopy $(DIR_BUILD)/kernel.elf -O binary kernel.img
 
 run: kernel.img
-	qemu-system-aarch64 -M raspi3 -kernel kernel.img -serial null -serial stdio
+	qemu-system-aarch64 -M raspi3 -kernel kernel.img -nographic -serial null -serial mon:stdio
