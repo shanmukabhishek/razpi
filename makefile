@@ -29,3 +29,6 @@ DEP_FILES = $(OBJ_FILES:%.o=%.d)
 kernel.img: $(DIR_SRC)/linker.ld $(OBJ_FILES)
 	$(ARMGNU)-ld -T $(DIR_SRC)/linker.ld -o $(DIR_BUILD)/kernel.elf $(OBJ_FILES)
 	$(ARMGNU)-objcopy $(DIR_BUILD)/kernel.elf -O binary kernel.img
+
+run: kernel.img
+	qemu-system-aarch64 -M raspi3 -kernel kernel.img -serial null -serial stdio
