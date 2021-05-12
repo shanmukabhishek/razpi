@@ -1,5 +1,5 @@
 #ifndef _MM_H
-#define _NN_H
+#define _MM_H
 
 #define PAGE_SHIFT    12
 #define TABLE_SHIFT   9
@@ -10,10 +10,8 @@
 
 #define LOW_MEM       (SECTION_SIZE << 1) // 2 * section size
 
-#ifndef __ASSEMBLER __
-
+#ifndef __ASSEMBLER__
 extern void memzero(const unsigned long src, const unsigned long n);
-
 #endif
 
 #endif

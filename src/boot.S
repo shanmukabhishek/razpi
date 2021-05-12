@@ -44,4 +44,4 @@ master:
   // Set the stack pointer to LOW_MEM (defined in mm.h).
   mov sp, #LOW_MEM
   bl kernel_main
-  b hang
+  b proc_hang
